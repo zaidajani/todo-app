@@ -52,20 +52,32 @@ button.addEventListener('click', () => {
 function deleteTodo(id) {
   todos.splice(id, 1);
   localStorage.setItem('todo', JSON.stringify(todos));
-  todos.forEach(todo => {
+  todos = JSON.parse(localStorage.getItem('todo'));
+  todolist.innerHTML = '';
+
+  if (todos.length <= 0) {
+    return;
+  }
+
+  for (let i = 0; i < todos.length; i++) {
     todolist.innerHTML += `
       <div class="card" style="width: 100%">
         <div class="card-body">
-          <h5 class="card-title">${todo.title}</h5>
+          <h5 class="card-title">${todos[i].title}</h5>
           <p class="card-text">
-            ${todo.description}
+            ${todos[i].description}
           </p>
-          <button class="btn btn-primary" onclick="deleteTodo(${todo.id})">Delete</button>
+          <button class="btn btn-primary" onclick="deleteTodo(${todos[i].id - 1})">Delete</button>
         </div>
       </div>
       <br>
     `
-  });
+  }
+}
+
+function clearAllTodos() {
+  localStorage.clear();
+  todolist.innerHTML = '';
 }
 
 function update() {
@@ -77,7 +89,7 @@ function update() {
           <p class="card-text">
             ${todo.description}
           </p>
-          <button class="btn btn-primary" onclick="deleteTodo(${todo.id})">Delete</button>
+          <button class="btn btn-primary" onclick="deleteTodo(${todo.id - 1})">Delete</button>
         </div>
       </div>
       <br>
