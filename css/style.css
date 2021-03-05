@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #bcf0ff;
+}
+
+.nav-top {
+  background-color: #94A3F2;
+  position: absolute;
+  height: 9 vh;
+  width: 100%;
+}
+
+.nav-top h1 {
+  color: white;
+  text-align: center;
+  font-family: 'Sansita Swashed', cursive;
+  font-size: 46px;
+}

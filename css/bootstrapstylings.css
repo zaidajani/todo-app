@@ -1,0 +1,11 @@
+.frm-add {
+  position: absolute;
+  padding: 10%;
+  width: 100%;
+}
+
+@media screen and (max-width: 728px) {
+  .frm-add {
+    margin-top: 70px;
+  }
+}
