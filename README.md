@@ -4,7 +4,7 @@ Todo list application with a beautiful design made using bootstrap and HTML, CSS
 
 <br>
 
-![demo](./demo-image-better.png)
+![demo](./demo-image-new.png)
 
 ## Setup
 
